@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.orange.pokemon.adapter.PokemonAdapter
+import com.orange.pokemon.adapter.PokiAdapter
 import com.orange.pokemon.data.PokemonEntyty
 import com.orange.pokemon.data.PokimonDao
 import com.orange.pokemon.data.PokimontDataBase
@@ -25,7 +25,7 @@ private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var pokemonAdapter: PokemonAdapter
+    private lateinit var pokiAdapter: PokiAdapter
     private lateinit var database: PokimontDataBase
     private lateinit var dao: PokimonDao
     private lateinit var PokimonsList: List<Pokemon>
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val service = NetworkClient().getRetrofit().create(ApiService::class.java)
-        val pokemonAdapter = PokemonAdapter()
+        val pokemonAdapter = PokiAdapter()
 
         //My code
         val recyclerView = findViewById<RecyclerView>(R.id.pokemon_recycler)
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getDataFromDB(adapter: PokemonAdapter) {
+    private fun getDataFromDB(adapter: PokiAdapter) {
         GlobalScope.launch {
             //var list: List<PokemonEntyty>? = null
             val list = dao.getALLPokimon()

@@ -12,8 +12,8 @@ import com.orange.pokemon.data.PokemonEntyty
 import com.orange.pokemon.databinding.PokemonItemBinding
 
 
-class PokemonAdapter :
-            ListAdapter<PokemonEntyty, PokemonAdapter.PokemonViewholder>(PokemonDiffUtils()) {
+class PokiAdapter :
+            ListAdapter<PokemonEntyty, PokiAdapter.PokemonViewholder>(PokemonDiffUtils()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewholder {
         val binding = PokemonItemBinding.inflate(
